@@ -54,10 +54,6 @@
 
   if (!loginPage) {
     document.addEventListener('DOMContentLoaded', () => {
-      const badge = document.createElement('aside');
-      badge.className = 'static-demo-badge';
-      badge.textContent = '本地静态演示 · 非学校正式系统';
-      document.body.append(badge);
 
       const account = document.querySelector('.sso-link.sign-out');
       if (!account) return;
