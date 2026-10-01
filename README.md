@@ -1,6 +1,6 @@
 # Tabula 静态页面
 
-在线访问：[tabulawarwick.com](https://tabulawarwick.com/)。原 [GitHub Pages 地址](https://reaaaq.github.io/tabula-static-ui/)会跳转到自定义域名。源码仓库：[reAAAq/tabula-static-ui](https://github.com/reAAAq/tabula-static-ui)。
+在线访问：[GitHub Pages](https://reaaaq.github.io/tabula-static-ui/)。源码仓库：[reAAAq/tabula-static-ui](https://github.com/reAAAq/tabula-static-ui)。
 
 按当前浏览器中已登录的 Tabula 首页制作，保留 Terrence Zhang、Hello, Terrence、四个功能入口、五条活动、活动展开内容及页脚原文。
 
@@ -37,7 +37,5 @@ npm run dev
 ## GitHub Pages
 
 此项目使用 `main` 分支的根目录发布。`.nojekyll` 让 GitHub Pages 直接提供静态文件，无需构建。页面链接和资源路径均为相对路径，可部署在仓库对应的子路径下。
-
-根目录 `CNAME` 文件将网站绑定到 `tabulawarwick.com`。GoDaddy 中根域名的 A/AAAA 记录指向 GitHub Pages 官方地址，`www` 的 CNAME 指向 `reaaaq.github.io`。
 
 `reference/` 中的核对截图和本地压缩包不提交到仓库。
