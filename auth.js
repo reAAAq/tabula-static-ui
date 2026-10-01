@@ -3,9 +3,7 @@
   'use strict';
 
   const sessionKey = 'tabula-static-demo-session';
-  const pages = new Set(['index.html', 'profile.html', 'modules.html']);
   const loginPage = location.pathname.endsWith('/login.html');
-  const currentPage = location.pathname.split('/').pop() || 'index.html';
 
   function isSignedIn() {
     try {
@@ -16,15 +14,13 @@
   }
 
   function destination() {
-    const requested = new URLSearchParams(location.search).get('next');
-    return pages.has(requested) ? requested : 'index.html';
+    return 'index.html';
   }
 
   function requireSession() {
     if (!loginPage && !isSignedIn()) {
       document.documentElement.classList.add('auth-pending');
-      const next = pages.has(currentPage) ? currentPage : 'index.html';
-      location.replace(`login.html?next=${encodeURIComponent(next)}`);
+      location.replace('login.html');
       return false;
     }
     document.documentElement.classList.remove('auth-pending');
