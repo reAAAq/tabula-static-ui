@@ -1,0 +1,2 @@
+ul.boolean-list{list-style:none}ul.boolean-list li :before{margin:0 1em}ul.boolean-list li.true{color:#468847}ul.boolean-list li.true:before{content:"\2714"}ul.boolean-list li.false{color:#b0302e}ul.boolean-list li.false:before{content:"\2718"}table.sits-debug tr.true,table.sits-debug tr.true a{color:#468847}table.sits-debug tr.false,table.sits-debug tr.false a{color:#b0302e}table.sits-debug tr td.selected{color:#9d5c14;font-weight:700}
+/*# sourceMappingURL=home.css.map*/
