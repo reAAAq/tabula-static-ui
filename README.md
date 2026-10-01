@@ -1,5 +1,7 @@
 # Tabula 静态页面
 
+在线访问：[GitHub Pages](https://reaaaq.github.io/tabula-static-ui/)。源码仓库：[reAAAq/tabula-static-ui](https://github.com/reAAAq/tabula-static-ui)。
+
 按当前浏览器中已登录的 Tabula 首页制作，保留 Terrence Zhang、Hello, Terrence、四个功能入口、五条活动、活动展开内容及页脚原文。
 
 `profile.html` 复刻 My Student Profile 资料页，保留原头像、资料字段、课程区、导航和页脚。首页的 My Student Profile 链接跳转到资料页；左上角的 Warwick 标识和 Tabula 标题返回首页。
