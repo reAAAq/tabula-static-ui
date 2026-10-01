@@ -10,21 +10,25 @@
 
 Modules 的课程总分、等级及各项考核成绩已按后来提供的七张截图修正，学年均分为 63.1%。
 
+`login.html` 参照已打开的登录页面制作背景、标识、用户名输入框、Next 按钮和页脚。用户名、密码分两步输入，使用浏览器内的固定演示账号校验；首页、资料页及 Modules 页会先检查当前标签页的演示会话。点击右上角姓名后可 Sign out。页面有静态演示标识，不连接学校认证系统，不发送或记录输入的账号密码。登录演示随当前版本发布到上述 GitHub Pages 地址。
+
 ## 本地预览
 
 ```sh
 npm run dev
 ```
 
-打开 http://127.0.0.1:4174。也可以直接双击 `index.html`。
+打开 http://127.0.0.1:4174，会先进入登录页。请通过本地服务器预览，浏览器直接打开文件时的会话存储行为可能不同。
 
-这是无需构建、无需安装依赖的静态网站，可将 `index.html`、`profile.html`、`modules.html`、`styles.css`、`app.js`、`modules.js` 和整个 `assets/` 目录复制到静态服务器。
+这是无需构建、无需安装依赖的静态网站。页面文件、CSS、JavaScript 和整个 `assets/` 目录构成完整本地版本。
 
 ## 文件
 
 - `index.html`：页面结构和原文。
 - `profile.html`：My Student Profile 资料页。
 - `modules.html`：Modules 课程页。
+- `login.html`、`login.css`、`login.js`：静态演示登录界面和两步输入交互。
+- `auth.js`、`auth.css`：演示会话校验、退出和页面访问控制。
 - `modules.js`：已保存课程详情的本地展开、收起控制。
 - `assets/`：本地保存的原站 CSS、Lato 字体、图标字体、Warwick 标识与背景。
 - `styles.css`：本地补充样式。
@@ -32,7 +36,9 @@ npm run dev
 - `reference/original.jpg`：原页面参照截图。
 - `reference/recreated.jpg`：复刻页面截图。
 
-所有页面资源均从本地加载。三页通过原生 HTML 链接互相跳转，资料页不含 JavaScript。其余入口保留文字与样式。关闭活动只影响当前浏览器页面，刷新后恢复。Modules 页的详情已包含在 HTML 中，展开时无需请求数据。
+所有页面资源均从本地加载。三个内容页通过原生 HTML 链接互相跳转；其余入口保留文字与样式。关闭活动只影响当前浏览器页面，刷新后恢复。Modules 页的详情已包含在 HTML 中，展开时无需请求数据。
+
+登录只用于演示页面跳转，不提供真实数据保护：固定用户名、密码散列和内容都存在静态文件中，会话标记可被修改。校验使用 Web Crypto 的 SHA-256，不在源码中保留明文密码。`sessionStorage` 仅保存登录标记，不保存用户名或密码。真实权限控制需要服务端认证。
 
 ## GitHub Pages
 
