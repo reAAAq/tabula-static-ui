@@ -3,6 +3,8 @@
   'use strict';
 
   const sessionKey = 'tabula-static-demo-session';
+  const demoUsername = 'u5593635';
+  const demoPassword = 'ZhanxingClawx0924*';
   const loginPage = location.pathname.endsWith('/login.html');
 
   function isSignedIn() {
@@ -31,11 +33,7 @@
     isSignedIn,
     destination,
     async signIn(username, password) {
-      if (username !== 'u5593635') return false;
-      const bytes = new TextEncoder().encode(password);
-      const digest = await crypto.subtle.digest('SHA-256', bytes);
-      const hex = Array.from(new Uint8Array(digest), byte => byte.toString(16).padStart(2, '0')).join('');
-      if (hex !== 'a9bc53be5a7a47c0b13c995f4db67aee0c57db4cd7f4617f71c00c9d68746be2') return false;
+      if (username !== demoUsername || password !== demoPassword) return false;
       // Store only a demo session flag, never the entered credentials.
       sessionStorage.setItem(sessionKey, 'signed-in');
       return true;
